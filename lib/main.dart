@@ -16,6 +16,7 @@ class WanAndroidApp extends StatefulWidget {
 class _WanAndroidApp extends State<WanAndroidApp> {
   var currentIndex = 0;
   var indexedStack;
+  var titles = ["博客", "公众号", "个人中心"];
   List<BottomNavigationBarItem> navigationViews;
 
   @override
@@ -23,7 +24,7 @@ class _WanAndroidApp extends State<WanAndroidApp> {
     indexedStack = IndexedStack(
         children: <Widget>[HomePage(), DiscoverPage(), MePage()],
         index: currentIndex);
-    
+
     return MaterialApp(
       title: '玩安卓',
       theme: ThemeData(
@@ -31,7 +32,7 @@ class _WanAndroidApp extends State<WanAndroidApp> {
       ),
       home: new Scaffold(
         appBar: AppBar(
-          title: Text('玩安卓'),
+          title: Text(titles[currentIndex]),
         ),
         body: indexedStack,
         bottomNavigationBar: BottomNavigationBar(
@@ -57,20 +58,20 @@ class _WanAndroidApp extends State<WanAndroidApp> {
     navigationViews = [
       BottomNavigationBarItem(
           icon:
-              Image.asset('lib/images/home_default.png', width: 30, height: 30),
+              Image.asset('lib/images/home_default.png', width: 20, height: 20),
           activeIcon:
-              Image.asset('lib/images/home_active.png', width: 30, height: 30),
+              Image.asset('lib/images/home_active.png', width: 20, height: 20),
           title: Text(navigationItems[0])),
       BottomNavigationBarItem(
           icon: Image.asset('lib/images/discover_default.png',
-              width: 30, height: 30),
+              width: 20, height: 20),
           activeIcon: Image.asset('lib/images/discover_active.png',
-              width: 30, height: 30),
+              width: 20, height: 20),
           title: Text(navigationItems[1])),
       BottomNavigationBarItem(
-          icon: Image.asset('lib/images/me_default.png', width: 30, height: 30),
+          icon: Image.asset('lib/images/me_default.png', width: 20, height: 20),
           activeIcon:
-              Image.asset('lib/images/me_active.png', width: 30, height: 30),
+              Image.asset('lib/images/me_active.png', width: 20, height: 20),
           title: Text(navigationItems[2]))
     ];
   }

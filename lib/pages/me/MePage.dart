@@ -22,7 +22,7 @@ class _MePageState extends State<MePage> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('个人中心'),
+      child: Text('开发中'),
     );
   }
 }
